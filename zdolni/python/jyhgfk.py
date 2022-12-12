@@ -20,7 +20,7 @@ for k in range(0, l_graczy):
     for l in range(10):
         
         gracze[k].append(' ')
-    gracze[k].append(f'Gracz nr. {k+1}')
+    # gracze[k].append(f'Gracz nr. {k+1}')
 
 
 
@@ -50,14 +50,32 @@ while(i>10):
         
         gracze[j][i] = points
     ### dac do tablicy 
+    tab = []
     ### tab[0] = 1,2, ..., 9,10
     ### tab[1] = gracz 1 ... points
-    for g in range(len(gracze)):
-        for u in range
-        for h in range(0,10):
-            if len(str(gracze[g][h])) == 1:
-                tab.append()
+    for g in range(len(gracze)+1):
+        if g == 0:
+            tab[g] = ['             1   2   3   4   5   6   7   8   9   10']
+        else:
+            for h in range(0,10):
+                tab[g].append(f'Gracz nr. {g}')
+                if len(str(gracze[g-1][h])) == 3:
+                    # tab.append(f'Gracz nr. {g} ')
+                    tab[g].append(f' {gracze[g-1][h]}')
+                elif len(str(gracze[g-1][h])) == 2:
+                    # tab.append(f'Gracz nr. {g} ')
+                    tab[g].append(f'  {gracze[g-1][h]}')
+                elif len(str(gracze[g-1][h])) == 1 and gracze[g-1][h] != ' ':
+                    # tab.append(f'Gracz nr. {g} ')
+                    tab[g].append(f'  {gracze[g-1][h]} ')
+                elif len(str(gracze[g-1][h])) == 1 and gracze[g-1][h] == ' ':
+                    # tab.append(f'Gracz nr. {g} ')
+                    continue
 
+    for d in range(len(tab)):
+        print(*tab[d])
+
+    i+=1
 
 
             
